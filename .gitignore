@@ -1,0 +1,7 @@
+/venv
+
+.modal.toml
+
+.DS_Store
+
+.env
