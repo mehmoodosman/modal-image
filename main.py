@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import requests
 import os
 
+
 def download_model():
     from diffusers import AutoPipelineForText2Image
     import torch
@@ -23,8 +24,8 @@ app = modal.App("sd-demo", image=image)
 
 @app.cls(
     image=image,
-    gpu="A10G",
-    container_idle_timeout=300, # 5 minutes
+    gpu="H100",     # GPU Selection
+    container_idle_timeout=300,     # 5 minutes
     secrets=[modal.Secret.from_name("custom-secret")]
 )
 class Model:
