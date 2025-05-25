@@ -6,7 +6,8 @@ import requests
 import os
 
 from huggingface_hub import login
-login(token = "")
+
+login(token = os.getenv("HF_TOKEN"))
 
 def download_model():
     from diffusers import DiffusionPipeline
